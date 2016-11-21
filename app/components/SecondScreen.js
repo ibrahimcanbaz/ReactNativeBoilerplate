@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 
 import NavButton from './NavButton'
+import styles  from '../styles/styles';
 
 const SecondScreen = (props) => {
 	return (
@@ -10,7 +11,7 @@ const SecondScreen = (props) => {
 
 			<NavButton destLabel="Third" buttonHandler={props.onButtonPress} />
 
-			
+
 			<View style={styles.spacer}>
 				<NavButton destLabel="Modal" buttonHandler={props.onModalButtonPress} />
 			</View>

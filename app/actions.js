@@ -12,6 +12,7 @@ export const BASIC_ACTION = 'BASIC_ACTION'
 // *** Action Creators ***
 // The following action creators were derived from NavigationStackReducer
 export function navigatePush(state) {
+    
     state = typeof state === 'string' ? {
         key: state,
         title: state

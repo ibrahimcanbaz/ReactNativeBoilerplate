@@ -2,36 +2,40 @@ import { combineReducers } from 'redux'
 import * as NavigationStateUtils from 'NavigationStateUtils'
 
 
-import * as action from './actions'
+import * as types from './actions'
 
 const initialNavState = {
 	index: 0,
 	loading:false,
 	routes: [
-		{ key: 'SplashScreen'+Date.now(), title: '' }
+		{ key: 'FirstScreen'+Date.now(), title: '' }
 	]
   }
 
 function navigationState(state = initialNavState, action) {
 	//console.log(state);
+
 	switch (action.type) {
-	case action.NAV_PUSH:
+
+	case types.NAV_PUSH:
+
 		if (state.routes[state.index].key === (action.state && action.state.key)) return state
+
 		return NavigationStateUtils.push(state, action.state)
 
-	case action.NAV_POP:
-		//alert(JSON.stringify(state));
+	case types.NAV_POP:
+
 		if (state.index === 0 || state.routes.length === 1) return state
 		return NavigationStateUtils.pop(state)
 
-	case action.NAV_JUMP_TO_KEY:
+	case types.NAV_JUMP_TO_KEY:
 
 		return NavigationStateUtils.jumpTo(state, action.key)
 
-	case action.NAV_JUMP_TO_INDEX:
+	case types.NAV_JUMP_TO_INDEX:
 		return NavigationStateUtils.jumpToIndex(state, action.index)
 
-	case action.NAV_RESET:
+	case types.NAV_RESET:
 		return {
 			...state,
 			index: action.index,

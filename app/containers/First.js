@@ -4,7 +4,7 @@ import FirstScreen from '../components/FirstScreen'
 import { navigatePush } from '../actions'
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { 
 	return {
     data:state.navigationState.data
 	}
