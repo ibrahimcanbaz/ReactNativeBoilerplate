@@ -12,7 +12,7 @@ export const BASIC_ACTION = 'BASIC_ACTION'
 // *** Action Creators ***
 // The following action creators were derived from NavigationStackReducer
 export function navigatePush(state) {
-    
+
     state = typeof state === 'string' ? {
         key: state,
         title: state
@@ -50,12 +50,54 @@ export function navigateReset(routes, index) {
         routes
     }
 }
-export function basicAction(data){
-  return (dispatch,getState)=>{
-    return {
-        type: BASIC_ACTION,
-        index,
-        routes
+export function basicAction(data) {
+    return (dispatch, getState) => {
+        return {
+            type: BASIC_ACTION,
+            index,
+            routes
+        }
     }
-  }
+}
+
+export const postData = () => {
+    return (dispatch) => {
+        dispatch({
+                type: SEARCH_STARTED
+            })
+            //alert(getState().navigationState.wishes)
+        api.postData({
+            "date": new Date(),
+            "title": "foo",
+            "body": "bar",
+            "userId": 1,
+        }).then((res) => {
+            dispatch({
+                type: BASIC_ACTION,
+            })
+        })
+    }
+}
+
+const fetchSth = (dispatch) => {
+    return dispatch => {
+        var returnData;
+        dispatch({
+            type: SEARCH_STARTED
+        })
+        api.fetchSth().then((res) => {
+        //Fetching someting from URL or from disk are the same
+        //api.readFromDisk.then((res)=>{
+            returnData = JSON.parse(res);
+            if (returnData == null) {
+                //console.log('Entered');
+                //dispatch(somefunction());
+            } else {
+                dispatch({
+                    type: BASIC_ACTION,
+                    returnData
+                })
+            }
+        });
+    }
 }
