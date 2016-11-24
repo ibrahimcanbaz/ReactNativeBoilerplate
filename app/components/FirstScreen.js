@@ -18,11 +18,12 @@ class FirstScreen extends Component {
 
 render() {
 	return (
+    <View  style={styles.mainBackgroundImage} >
 		<View style={styles.container}>
 			<Text style={styles.title}>First Screen</Text>
-
-			<NavButton destLabel="Second" buttonHandler={this.props.onButtonPress} />
+			<NavButton destLabel="Sec" buttonHandler={this.props.onButtonPress} />
 		</View>
+  </View>
 	)
 }
 }

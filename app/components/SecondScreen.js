@@ -6,6 +6,7 @@ import styles  from '../styles/styles';
 
 const SecondScreen = (props) => {
 	return (
+		<View  style={styles.mainBackgroundImage} >
 		<View style={styles.container}>
 			<Text style={styles.title}>Second Screen</Text>
 
@@ -16,6 +17,7 @@ const SecondScreen = (props) => {
 				<NavButton destLabel="Modal" buttonHandler={props.onModalButtonPress} />
 			</View>
 		</View>
+	</View>
 	)
 }
 

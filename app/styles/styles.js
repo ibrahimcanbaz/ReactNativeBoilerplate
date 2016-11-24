@@ -8,7 +8,7 @@ const {
 
 const styles = StyleSheet.create({
   container: {
-		flex: 1
+		flex: 1,
 	},
   navigationHeader: {
 

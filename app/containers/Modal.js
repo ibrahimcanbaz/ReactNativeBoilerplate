@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import ModalScreen from '../components/ModalScreen' 
+import ModalScreen from '../components/ModalScreen'
 import { navigatePop} from '../actions'
 
 

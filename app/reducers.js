@@ -8,7 +8,7 @@ const initialNavState = {
 	index: 0,
 	loading:false,
 	routes: [
-		{ key: 'FirstScreen'+Date.now(), title: '' }
+		{ key: 'FirstScreen'+Date.now(), title: 'First Page' }
 	]
   }
 
